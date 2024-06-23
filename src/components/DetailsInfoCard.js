@@ -1,6 +1,8 @@
+import PropTypes from 'prop-types';
+
 const DetailsInfoCard = ({ title, items }) => {
   return (
-    <div className="mt-5 cursor-default rounded-lg border border-gray-200 bg-white bg-opacity-20 p-5 shadow-md md:mt-0 md:max-h-[34%] md:overflow-x-auto">
+    <section className="mt-5 cursor-default rounded-lg border border-gray-200 bg-white bg-opacity-20 p-5 shadow-md md:mt-0 md:max-h-[34%] md:overflow-x-auto">
       <p className="mb-2 text-xl font-semibold">
         <strong>{title}:</strong> {items.length}
       </p>
@@ -9,8 +11,18 @@ const DetailsInfoCard = ({ title, items }) => {
           <li key={item.resourceURI}>{item.name}</li>
         ))}
       </ul>
-    </div>
+    </section>
   );
+};
+
+DetailsInfoCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      resourceURI: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default DetailsInfoCard;

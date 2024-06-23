@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
-
 @layer base {
   @font-face {
     font-family: 'NEXON Lv1 Gothic OTF';
@@ -48,8 +44,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: theme('colors.gray_500');
-}
-
-gen-search-widget {
-  position: relative !important;
 }

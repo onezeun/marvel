@@ -1,7 +1,9 @@
 import { useNavigate, Outlet } from 'react-router-dom';
+
 const Layout = () => {
   const navigate = useNavigate();
-  const handleTitleClick = (id) => {
+  
+  const handleTitleClick = () => {
     navigate(`/`);
   };
 
@@ -15,9 +17,9 @@ const Layout = () => {
           MARVEL CHARACTERS
         </h1>
       </div>
-      <div className="mx-auto max-w-[1200px]">
+      <main className="mx-auto max-w-[1200px]">
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 };

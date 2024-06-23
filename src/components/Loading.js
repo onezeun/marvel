@@ -1,8 +1,10 @@
 import React from 'react';
+import { Ring } from '@uiball/loaders';
 
 const Loading = () => {
   return (
-    <div className="shadow-main_purple text-shadow mt-[20%] w-full cursor-default text-center font-aggro text-3xl">
+    <div className="shadow-main_purple text-shadow mt-[30%] flex w-full cursor-default flex-col items-center gap-10 font-aggro text-3xl md:mt-[20%]">
+      <Ring color="white" />
       Loading...
     </div>
   );

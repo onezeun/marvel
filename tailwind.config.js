@@ -26,33 +26,14 @@ module.exports = {
         gray_500: '#6b7280'
       },
       animation: {
-        'gradient-x': 'gradient-x 20s ease infinite',
-        rotate: 'rotate 4s linear infinite',
-        blink: 'blink 5s linear infinite'
+        'gradient-x': 'gradient-x 15s ease infinite',
       },
       keyframes: {
         'gradient-x': {
           '0%, 100%': { 'background-position': '0% 50%' },
           '50%': { 'background-position': '100% 50%' }
-        },
-        rotate: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' }
-        },
-        blink: {
-          '0%': { opacity: '1' },
-          '40%': { opacity: '0.5' },
-          '80%': { opacity: '1' }
         }
-      },
-      boxShadow: {
-        glow: '0 0 10px 2px rgba(255, 255, 255, 0.6)'
       }
-    }
-  },
-  variants: {
-    extend: {
-      boxShadow: ['hover']
     }
   },
   plugins: [
