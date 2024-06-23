@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { getCharacters } from 'api/index';
 import CharacterCard from 'components/CharacterCard';
 import Loading from 'components/Loading';
 
 const Home = () => {
-  const navigate = useNavigate();
   const [characters, setCharacters] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -29,10 +27,6 @@ const Home = () => {
 
     fetchData();
   }, []);
-
-  const handleItemClick = (id) => {
-    navigate(`/character/${id}`);
-  };
 
   if (loading) {
     return <Loading />;
@@ -58,7 +52,6 @@ const Home = () => {
               id={character.id}
               thumbnail={thumbnail}
               name={character.name}
-              handleItemClick={handleItemClick}
             />
           );
         })}
