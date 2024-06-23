@@ -40,7 +40,7 @@ const Details = () => {
   return (
     <div className="mt-5 p-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-shadow shadow-main_purple cursor-default text-3xl font-bold">
+        <h2 className="cursor-default text-3xl font-bold shadow-main_purple text-shadow">
           {character.name}
         </h2>
         <div className="flex gap-4">
