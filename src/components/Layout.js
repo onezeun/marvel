@@ -1,8 +1,8 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <div>
-      <h1>Layout</h1>
+      <h1>Marvel Characters</h1>
       <Outlet />
     </div>
   );

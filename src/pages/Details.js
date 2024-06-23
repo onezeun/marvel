@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getCharacterById } from "api/index";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getCharacterById } from 'api/index';
 
 const Details = () => {
   const { id } = useParams();
@@ -25,6 +25,10 @@ const Details = () => {
         <div>
           <p>Details</p>
           {character.name}
+          <img
+            src={character.thumbnail.path + '.' + character.thumbnail.extension}
+            alt={character.name}
+          />
         </div>
       )}
     </div>

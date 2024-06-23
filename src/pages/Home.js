@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCharacters } from "api/index";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getCharacters } from 'api/index';
 
 const Home = () => {
   const navigate = useNavigate();
