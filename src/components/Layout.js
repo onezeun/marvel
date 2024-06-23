@@ -1,9 +1,23 @@
-import { Outlet } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 const Layout = () => {
+  const navigate = useNavigate();
+  const handleTitleClick = (id) => {
+    navigate(`/`);
+  };
+
   return (
-    <div>
-      <h1>Marvel Characters</h1>
-      <Outlet />
+    <div className="font-nexon from-marvel_dark_purple to-marvel_dark_violet animate-gradient-x min-w-screen min-h-screen bg-gradient-to-r bg-[length:800%_800%] text-white">
+      <div
+        className="flex h-36 md:h-28 cursor-pointer items-center justify-center text-center"
+        onClick={handleTitleClick}
+      >
+        <h1 className="shadow-main_purple box-border font-aggro text-5xl text-shadow-lg">
+          MARVEL CHARACTERS
+        </h1>
+      </div>
+      <div className="mx-auto max-w-[1200px]">
+        <Outlet />
+      </div>
     </div>
   );
 };

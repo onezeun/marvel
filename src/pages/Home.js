@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCharacters } from 'api/index';
+import CharacterCard from 'components/CharacterCard';
+import Loading from 'components/Loading';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -9,8 +11,10 @@ const Home = () => {
 
   const fetchData = async () => {
     const data = await getCharacters();
-    console.log(data.data.results);
-    setCharacters(data.data.results);
+    const filteredCharacters = data.data.results.filter(
+      (character) => !character.thumbnail.path.includes('image_not_available')
+    );
+    setCharacters(filteredCharacters);
     setLoading(false);
   };
 
@@ -25,18 +29,22 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
-        <div>
-          <ul>
-            {characters.map((character, index) => {
-              return (
-                <li key={index} onClick={() => handleItemClick(character.id)}>
-                  {character.name}
-                </li>
-              );
-            })}
-          </ul>
+        <div className="flex flex-wrap justify-center gap-10 p-8">
+          {characters.map((character) => {
+            const thumbnail =
+              character.thumbnail.path + '.' + character.thumbnail.extension;
+            const name = character.name;
+            return (
+              <CharacterCard
+                id={character.id}
+                thumbnail={thumbnail}
+                name={name}
+                handleItemClick={handleItemClick}
+              />
+            );
+          })}
         </div>
       )}
     </div>
